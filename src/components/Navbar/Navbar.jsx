@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { NavButton } from "./NavButton";
 import Logo from "/vite.svg";
 import style from "./Navbar.module.css";
 
 export const Navbar = () => {
+  const location = useLocation();
+  const home = location.pathname === "/";
+
   const [nav, setNav] = useState(false);
   return (
     <header className="">
@@ -17,8 +20,13 @@ export const Navbar = () => {
         <ul
           className={nav ? [style.menu, style.active].join(" ") : [style.menu]}
         >
+          {!home && (
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+          )}
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/projects">Projects</NavLink>
           </li>
           <li>
             <NavLink to="/notes">Notes</NavLink>
