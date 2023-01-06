@@ -1,7 +1,11 @@
 import { useState } from "react";
+import { useLocation, NavLink } from "react-router-dom";
+import { AsideIcon } from "./AsideIcon";
 import { MenuArrow } from "./MenuArrow";
 
 export const Aside = () => {
+  const location = useLocation();
+  const visible = location.pathname === "/react";
   const [nav, setNav] = useState(false);
 
   return (
@@ -11,23 +15,24 @@ export const Aside = () => {
           nav && "shadow-[5px_2px_7px_1px_rgba(0,0,0,0.02)]"
         }`}
       >
-        <MenuArrow isActive={nav} onClick={() => setNav(!nav)} />
-        <div className="cursor-pointer w-7 h-7 flex justify-center items-center bg-[#7D71FF] rounded-full text-white text-[12px] ">
-          BS
-        </div>
-        <div className="w-7 h-7 flex justify-center items-center bg-[#7D71FF] rounded-full text-white text-[12px] ">
-          BS
-        </div>
+        {visible && <MenuArrow isActive={nav} onClick={() => setNav(!nav)} />}
+        <NavLink to="/react">
+          <AsideIcon />
+        </NavLink>
       </aside>
       {/* MENU */}
       <div
-        className={`absolute z-40 top-0 transition-all duration-500 ease-in-out ${
+        className={`absolute z-40 top-0 transition-all ${
           nav ? "left-[60px]" : "-left-[100%]"
-        }  bottom-0 pt-12 px-6 flex flex-col bg-gray-100 border-r border-[#E1F0DB]`}
+        }  bottom-0 p-6 flex flex-col bg-gray-100 border-r border-[#E1F0DB]`}
       >
-        <div>555dfdddddddb</div>
-        <div>555</div>
-        <div>555</div>
+        <button className="flex items-center gap-3 bg-[#cdc4e7] py-2 pl-2 pr-8 rounded-xl text-left">
+          <div className="w-[40px] h-[40px] bg-[#7D71FF] rounded-md ml-1"></div>
+          <div>
+            <p className="text-base font-semibold">Title of work</p>
+            <p className="text-sm ">Short description</p>
+          </div>
+        </button>
       </div>
     </>
   );

@@ -1,9 +1,9 @@
 import { PageTitle } from "../components/PageTitle";
 
-export const Projects = () => {
+export const ReactPage = () => {
   return (
     <div>
-      <PageTitle title="Projects" />
+      <PageTitle title="React projects" />
     </div>
   );
 };

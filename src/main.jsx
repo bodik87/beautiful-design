@@ -8,6 +8,7 @@ import { Notes } from "./pages/Notes";
 import { About } from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
 import "./index.css";
+import { ReactPage } from "./pages/ReactPage";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/notes",
         element: <Notes />,
+      },
+      {
+        path: "/react",
+        element: <ReactPage />,
       },
     ],
     errorElement: <ErrorPage />,

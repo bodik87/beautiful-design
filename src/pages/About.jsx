@@ -1,3 +1,9 @@
+import { PageTitle } from "../components/PageTitle";
+
 export const About = () => {
-  return <div>About</div>;
+  return (
+    <div>
+      <PageTitle title="About" />
+    </div>
+  );
 };
