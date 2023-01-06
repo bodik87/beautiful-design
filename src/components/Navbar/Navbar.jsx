@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { NavButton } from "./NavButton";
 import Logo from "/vite.svg";
+import SearchIcon from "/search.svg";
 import style from "./Navbar.module.css";
 
 export const Navbar = () => {
@@ -21,7 +22,7 @@ export const Navbar = () => {
           className={nav ? [style.menu, style.active].join(" ") : [style.menu]}
         >
           {!home && (
-            <li>
+            <li className="text-[#ed1c24]">
               <NavLink to="/">Home</NavLink>
             </li>
           )}
@@ -34,12 +35,20 @@ export const Navbar = () => {
           <li>
             <NavLink to="/about">About</NavLink>
           </li>
-          <input
-            className={`ml-4 bg-transparent outline outline-[3px] outline-transparent border border-[#526b5b]/20 text-[#526b5b] text-sm pl-6 pr-2 py-1 rounded-lg transition-all placeholder:text-[#526b5b] focus:outline focus:outline-[#bae6a7]/50 ${
-              nav && "hidden"
-            }`}
-            placeholder="Search"
-          />
+          <div className="relative">
+            <img
+              className="absolute top-[6px] left-6"
+              width={18}
+              src={SearchIcon}
+              alt="search"
+            />
+            <input
+              className={`ml-4 bg-transparent outline outline-[3px] outline-transparent border border-[#526b5b]/20 text-[#526b5b] text-sm pl-8 pr-2 py-1 rounded-lg transition-all placeholder:text-xs placeholder:text-[#94A795] focus:outline focus:outline-[#bae6a7]/50 ${
+                nav && "hidden"
+              }`}
+              placeholder="Search projects"
+            />
+          </div>
         </ul>
 
         <div

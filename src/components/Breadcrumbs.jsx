@@ -7,7 +7,7 @@ export const Breadcrumbs = () => {
     <div className="h-6 text-xs">
       {!home && (
         <NavLink to="/">
-          <span className="font-semibold">Home</span>
+          <span className="font-semibold text-[#52505A]">Home</span>
         </NavLink>
       )}{" "}
       {!home && "/"}{" "}

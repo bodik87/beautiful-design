@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLocation, NavLink } from "react-router-dom";
+import { projectCategories } from "../data";
 import { AsideIcon } from "./AsideIcon";
 import { MenuArrow } from "./MenuArrow";
 
@@ -16,9 +17,11 @@ export const Aside = () => {
         }`}
       >
         {visible && <MenuArrow isActive={nav} onClick={() => setNav(!nav)} />}
-        <NavLink to="/react">
-          <AsideIcon />
-        </NavLink>
+        {projectCategories.map((category) => (
+          <NavLink key={category.title} to="/react">
+            <AsideIcon icon={category.icon} background={category.background} />
+          </NavLink>
+        ))}
       </aside>
       {/* MENU */}
       <div
