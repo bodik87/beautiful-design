@@ -1,14 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ErrorPage from "./pages/ErrorPage";
 import { App } from "./App";
 import { Home } from "./pages/Home";
 import { Projects } from "./pages/Projects";
 import { Notes } from "./pages/Notes";
 import { About } from "./pages/About";
-import ErrorPage from "./pages/ErrorPage";
-import "./index.css";
 import { ReactPage } from "./pages/ReactPage";
+import { CSSPage } from "./pages/CSSPage";
+import { HTMLPage } from "./pages/HTMLPage";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,14 @@ const router = createBrowserRouter([
       {
         path: "/react",
         element: <ReactPage />,
+      },
+      {
+        path: "/css",
+        element: <CSSPage />,
+      },
+      {
+        path: "/html",
+        element: <HTMLPage />,
       },
     ],
     errorElement: <ErrorPage />,

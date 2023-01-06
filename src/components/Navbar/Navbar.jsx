@@ -23,17 +23,25 @@ export const Navbar = () => {
         >
           {!home && (
             <li className="text-[#ed1c24]">
-              <NavLink to="/">Home</NavLink>
+              <NavLink title="Home" to="/">
+                Home
+              </NavLink>
             </li>
           )}
           <li>
-            <NavLink to="/projects">Projects</NavLink>
+            <NavLink title="Projects" to="/projects">
+              Projects
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/notes">Notes</NavLink>
+            <NavLink title="Notes" to="/notes">
+              Notes
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/about">About</NavLink>
+            <NavLink title="About" to="/about">
+              About
+            </NavLink>
           </li>
           <div className="relative">
             <img

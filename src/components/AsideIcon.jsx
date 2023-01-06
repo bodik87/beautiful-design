@@ -1,10 +1,10 @@
 export const AsideIcon = ({ icon = {}, background = "#7D71FF" }) => {
   return (
-    <div
-      className="cursor-pointer w-7 h-7 flex justify-center items-center rounded-full"
+    <a
+      className={`w-8 h-8 flex justify-center outline outline-[3px] outline-transparent items-center rounded-full  transition-all hover:outline-[#E0E3DE]`}
       style={{ backgroundColor: background }}
     >
-      <img width={20} src={icon} alt="icon" />
-    </div>
+      <img width={22} src={icon} alt="icon" />
+    </a>
   );
 };

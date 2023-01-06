@@ -16,12 +16,16 @@ export const Aside = () => {
           nav && "shadow-[5px_2px_7px_1px_rgba(0,0,0,0.02)]"
         }`}
       >
-        {visible && <MenuArrow isActive={nav} onClick={() => setNav(!nav)} />}
         {projectCategories.map((category) => (
-          <NavLink key={category.title} to="/react">
+          <NavLink
+            key={category.title}
+            title={category.title}
+            to={category.path}
+          >
             <AsideIcon icon={category.icon} background={category.background} />
           </NavLink>
         ))}
+        {visible && <MenuArrow isActive={nav} onClick={() => setNav(!nav)} />}
       </aside>
       {/* MENU */}
       <div
