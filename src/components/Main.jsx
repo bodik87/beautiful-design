@@ -3,7 +3,7 @@ import { Breadcrumbs } from "./Breadcrumbs";
 
 export const Main = () => {
   return (
-    <main className="pr-4 pl-[100px] py-4 flex flex-col">
+    <main className="w-full pr-4 pl-[100px] py-4 flex flex-col">
       <Breadcrumbs />
       <Outlet />
     </main>

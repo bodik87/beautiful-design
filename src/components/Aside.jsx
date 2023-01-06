@@ -6,7 +6,10 @@ import { MenuArrow } from "./MenuArrow";
 
 export const Aside = () => {
   const location = useLocation();
-  const visible = location.pathname === "/react";
+  const visible =
+    location.pathname === "/react" ||
+    location.pathname === "/css" ||
+    location.pathname === "/html";
   const [nav, setNav] = useState(false);
 
   return (
