@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { NavButton } from "./NavButton";
 import Logo from "/vite.svg";
@@ -10,6 +10,11 @@ export const Navbar = () => {
   const home = location.pathname === "/";
 
   const [nav, setNav] = useState(false);
+
+  useEffect(() => {
+    setNav(false);
+  }, [location]);
+
   return (
     <header className="">
       <div className="flex justify-between items-center h-[65px] pb-2 px-4 rounded-t-xl bg-gradient-to-t from-[#E1F0DB] to-[#E8F6E2] border-t border-[#E4F0DE]">

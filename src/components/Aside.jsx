@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, NavLink } from "react-router-dom";
 import { projectCategories } from "../data";
 import { AsideIcon } from "./AsideIcon";
@@ -11,6 +11,10 @@ export const Aside = () => {
     location.pathname === "/css" ||
     location.pathname === "/html";
   const [nav, setNav] = useState(false);
+
+  useEffect(() => {
+    setNav(false);
+  }, [location]);
 
   return (
     <>
