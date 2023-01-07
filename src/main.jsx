@@ -5,7 +5,7 @@ import ErrorPage from "./pages/ErrorPage";
 import { App } from "./App";
 import { Home } from "./pages/Home";
 import { Projects } from "./pages/Projects";
-import { Notes } from "./pages/Notes";
+import { Notes } from "./pages/Notes/Notes";
 import { About } from "./pages/About";
 import { ReactPage } from "./pages/ReactPage";
 import { CSSPage } from "./pages/CSSPage";

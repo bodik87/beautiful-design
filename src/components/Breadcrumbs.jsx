@@ -10,12 +10,12 @@ export const Breadcrumbs = () => {
   return (
     <div className="text-xs select-none">
       {!home && (
-        <NavLink to="/" title="Home">
-          <span className="font-semibold text-[#52505A]">Home</span>
+        <NavLink className="font-semibold text-[#52505A]" to="/" title="Home">
+          Home
         </NavLink>
       )}
       {lastPath.slice(0, -1).map((path) => (
-        <NavLink key={path} to={path} title="Home">
+        <NavLink key={path} to={path}>
           {" " +
             path.slice(0, 1) +
             " " +

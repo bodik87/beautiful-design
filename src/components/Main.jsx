@@ -15,6 +15,7 @@ export const Main = () => {
 
   return (
     <main className="w-full h-full px-4 md:pl-[100px] py-4 flex flex-col relative">
+      <Overlay />
       <div
         onClick={() => setPressed(!pressed)}
         className="cursor-pointer box md:hidden absolute top-6 right-6"
@@ -45,5 +46,14 @@ export const Main = () => {
       <Breadcrumbs />
       <Outlet />
     </main>
+  );
+};
+
+const Overlay = () => {
+  return (
+    <>
+      <div className="absolute z-40 left-0 bottom-4 w-full h-6 bg-gradient-to-t from-white to-transparent" />
+      <div className="absolute z-40 right-0 bottom-4 w-5 h-32 bg-gradient-to-t from-white to-transparent" />
+    </>
   );
 };
