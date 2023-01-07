@@ -26,7 +26,7 @@ export const ReactPage = () => {
           ))}
         </div>
       </header>
-      <section className="bg-[#e0e3de] w-full p-5"></section>
+      <section className="bg-[#F6F5F8] w-full p-5 rounded-xl flex-grow"></section>
     </>
   );
 };

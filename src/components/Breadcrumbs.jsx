@@ -4,7 +4,7 @@ export const Breadcrumbs = () => {
   const location = useLocation();
   const home = location.pathname === "/";
   return (
-    <div className="h-6 text-xs">
+    <div className="text-xs">
       {!home && (
         <NavLink to="/" title="Home">
           <span className="font-semibold text-[#52505A]">Home</span>
