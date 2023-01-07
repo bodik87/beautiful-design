@@ -19,7 +19,7 @@ export const Aside = () => {
   return (
     <>
       <aside
-        className={`absolute z-50 top-0 left-0 bottom-0 w-[60px] p-4 flex flex-col items-center gap-4 bg-white border-r border-[#F1F1F1] ${
+        className={`hidden absolute z-50 top-0 left-0 bottom-0 w-[60px] p-4 md:flex flex-col items-center gap-4 bg-white border-r border-[#F1F1F1] ${
           nav && "shadow-[5px_2px_7px_1px_rgba(0,0,0,0.02)]"
         }`}
       >

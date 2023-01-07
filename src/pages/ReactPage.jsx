@@ -5,7 +5,6 @@ export const ReactPage = () => {
   const [activeFilter, setActiveFilter] = useState(1);
   const handleClick = (i) => setActiveFilter(i);
   const filters = ["Easy", "All", "Hard"];
-  console.log(activeFilter);
 
   return (
     <>
