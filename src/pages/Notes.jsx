@@ -1,8 +1,9 @@
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { PageTitle } from "../components/PageTitle";
 import { notes } from "../data";
 import SearchIcon from "/search.svg";
 import ArrowImg from "/arrow.svg";
-import { useState } from "react";
 
 export const Notes = () => {
   const [inputText, setInputText] = useState("");
@@ -47,13 +48,18 @@ export const Notes = () => {
           >
             <div>
               <h2 className="text-2xl font-semibold">{note.title}</h2>
-              <h3 className="font-semibold text-sm mb-2">{note.title}</h3>
-              <p className="text-base whitespace-pre-line">{note?.body}</p>
+              <h3 className="font-semibold text-sm mt-1 mb-2 opacity-70">
+                {note.subtitle}
+              </h3>
+              <p className="text-sm whitespace-pre-line">{note?.description}</p>
             </div>
-            {note?.more && (
-              <button className="w-fit bg-white py-2 px-4 rounded-2xl text-xs font-semibold flex items-center gap-2">
-                More details <img width={10} src={ArrowImg} alt="more" />
-              </button>
+            {note?.path && (
+              <NavLink to={note.path}>
+                <button className="w-fit bg-[#7D71FF] text-white py-2 px-4 mt-3 rounded-2xl text-xs font-semibold flex items-center gap-2 outline outline-[3px] outline-transparent transition-all hover:outline-[#7D71FF]/30">
+                  More details
+                  <img width={12} src={ArrowImg} alt="more" />
+                </button>
+              </NavLink>
             )}
           </div>
         ))}

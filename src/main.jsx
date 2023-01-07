@@ -11,6 +11,7 @@ import { ReactPage } from "./pages/ReactPage";
 import { CSSPage } from "./pages/CSSPage";
 import { HTMLPage } from "./pages/HTMLPage";
 import "./index.css";
+import { NotePage_0 } from "./pages/Notes/NotePage_0";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/html",
         element: <HTMLPage />,
+      },
+      {
+        path: "/notes/0",
+        element: <NotePage_0 />,
       },
     ],
     errorElement: <ErrorPage />,

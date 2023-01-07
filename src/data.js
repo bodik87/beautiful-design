@@ -21,66 +21,37 @@ export const projectCategories = [
 
 export const notes = [
   {
+    id: 0,
+    title: "Корисні ресурси для швидкої розробки",
+    subtitle: "Список корисних сайтів",
+    description: `Лінь - один з найкращих двигунів прогресу! Вона змушує людину працювати менше, часто оптимізуючи робочий процес.
+      В цій статті зібрані посилання, що допоможуть пришвидшити розробку, витрачаючи менше зусиль.`,
+    links_pictures: [
+      {
+        id: 1,
+        url: "https://react-svgr.com/playground/",
+        title: "Генератор React компонента з svg",
+        decription:
+          "Достатньо вставити код svg і ресурс згенерує Реакт-компонент, що дозволить більш гнучко працювати з svg (наприклад змінювати зображення через прокинутий props).",
+      },
+      {
+        id: 2,
+        url: "https://jakearchibald.github.io/svgomg/",
+        title: "Оптимізатор розміру svg",
+        decription:
+          "Ресурс дозволяє зменшити зображення в форматі svg, видаляючи непотрібну інформацію з коду картинки.",
+      },
+    ],
+    image: "/notes/images/0.jpg",
+    path: "/notes/0",
+    isBig: true,
+  },
+  {
     id: 1,
-    title: "20 методов массивов",
-    subtitle: "20 методов массивов",
-    body: `
-    const [inputText, setInputText] = useState("");
-    const inputHandler = (e) => {
-      let lowerCase = e.target.value.toLowerCase();
-      setInputText(lowerCase);
-    };
-    const filteredData = notes.filter((note) => {
-      if (inputText === "") {
-        return note;
-      } else {
-        return note.title.toLowerCase().includes(inputText);
-      }
-    });
-    `,
-    path: "/react",
-    icon: "/aside-icons/react-icon.svg",
-    background: "#35363A",
-    more: true,
-    isBig: true,
-  },
-  {
-    id: 2,
-    title: "CSS колонки",
-    path: "/css",
-    icon: "/aside-icons/css-icon.svg",
-    background: "#264DE4",
-    more: true,
-  },
-  {
-    id: 3,
-    title: "HTML структурв",
-    path: "/html",
-    icon: "/aside-icons/html5-icon.svg",
-    background: "#E44D26",
-  },
-  {
-    id: 4,
-    title: "HTML структурв",
-    path: "/html",
-    icon: "/aside-icons/html5-icon.svg",
-    background: "#E44D26",
-    more: true,
-    isBig: true,
-  },
-  {
-    id: 5,
-    title: "HTML структурв",
-    path: "/html",
-    icon: "/aside-icons/html5-icon.svg",
-    background: "#E44D26",
-  },
-  {
-    id: 6,
-    title: "HTML структурв",
-    path: "/html",
-    icon: "/aside-icons/html5-icon.svg",
-    background: "#E44D26",
-    more: true,
+    title: "Корисні ресурси",
+    subtitle: "Посилання, що допоможуть",
+    description: `Лінь - один з найкращих двигунів прогресу! Вона змушує людину працювати менше, часто прискорюючи робочий процес.
+      В цій статті зібрані дуже корисні ресурси, що допоможуть пришвидшити розробку.`,
+    body: ``,
   },
 ];
