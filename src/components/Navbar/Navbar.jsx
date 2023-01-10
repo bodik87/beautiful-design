@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { NavButton } from "./NavButton";
 import Logo from "/vite.svg";
 import SearchIcon from "/search.svg";
 import ClearIcon from "/clear.svg";
-import style from "./Navbar.module.css";
+import styles from "./Navbar.module.css";
 
 export const Navbar = () => {
   const location = useLocation();
   const home = location.pathname === "/";
 
-  const [nav, setNav] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const [value, setValue] = useState("");
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -20,19 +19,21 @@ export const Navbar = () => {
   };
 
   useEffect(() => {
-    setNav(false);
+    setIsActive(false);
   }, [location]);
 
   return (
     <header className="">
-      <div className="flex justify-between items-center h-[65px] pb-2 px-4 rounded-t-xl bg-gradient-to-t from-[#E1F0DB] to-[#E8F6E2] border-t border-[#E4F0DE]">
+      <div className="flex justify-between items-center h-[65px] pb-2 px-4 md:rounded-t-xl bg-gradient-to-t from-[#E1F0DB] to-[#E8F6E2] border-t border-[#E4F0DE]">
         <div className="flex items-center justify-center gap-2">
           <img width={20} src={Logo} alt="/" />
           <p className="text-sm font-semibold text-[#526b5b]">BOGDAN SHULIKA</p>
         </div>
 
         <ul
-          className={nav ? [style.menu, style.active].join(" ") : [style.menu]}
+          className={
+            isActive ? [styles.menu, styles.active].join(" ") : [styles.menu]
+          }
         >
           {!home && (
             <li className="text-[#ed1c24]">
@@ -76,7 +77,7 @@ export const Navbar = () => {
               value={value}
               onChange={handleChange}
               className={`max-w-[200px] ml-4 bg-transparent outline outline-[3px] outline-transparent border border-[#526b5b]/20 text-[#526b5b] text-sm px-8 py-1 rounded-lg transition-all placeholder:text-xs placeholder:text-[#94A795] focus:outline focus:outline-[#bae6a7]/50 ${
-                nav && "hidden"
+                isActive && "hidden"
               }`}
               placeholder="Search projects"
             />
@@ -84,10 +85,28 @@ export const Navbar = () => {
         </ul>
 
         <div
-          onClick={() => setNav(!nav)}
-          className={nav ? style.mobile_btn_active : style.mobile_btn}
+          onClick={() => setIsActive(!isActive)}
+          className={isActive ? styles.mobile_btn_active : styles.mobile_btn}
         >
-          <NavButton isActive={nav} />
+          <svg
+            stroke="#526b5b"
+            fill="none"
+            className={
+              !isActive
+                ? "block transition-all"
+                : "transition-all -translate-y-[3px] translate-x-[2px] rotate-45"
+            }
+            viewBox="-10 -10 120 120"
+            width="40"
+          >
+            <path
+              className={!isActive ? styles.hambLine : styles.activeHambLine}
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70"
+            ></path>
+          </svg>
         </div>
       </div>
     </header>

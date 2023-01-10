@@ -1,10 +1,10 @@
 import { PageContent } from "../components/PageContent";
 import { PageTitle } from "../components/PageTitle";
-import { Carousel } from "../components/Carousel";
 import { CardContainer } from "../components/containers/CardContainer";
+import { SwiperSlider } from "../components/SwiperSlider";
 import { projects } from "../data";
 
-export const Projects = () => {
+export const ProjectsPage = () => {
   return (
     <PageContent>
       <PageTitle title="Projects" />
@@ -17,9 +17,7 @@ export const Projects = () => {
               {project.category}
             </h3>
             <p className="text-sm whitespace-pre-line">{project.description}</p>
-            <div className="slider flex gap-2 ">
-              <Carousel imagesArray={project.images} />
-            </div>
+            <SwiperSlider imagesArray={project.images} />{" "}
           </CardContainer>
         ))}
       </div>

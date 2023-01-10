@@ -7,7 +7,7 @@ export const PopupIcon = ({ isPressed, color = "#526b5b", onClick }) => {
     <>
       <div
         onClick={onClick}
-        className="bg-white w-8 h-8 rounded-full flex flex-col gap-[2px] items-center justify-center cursor-pointer box md:hidden fixed top-[85px] right-6"
+        className="md:hidden box w-8 h-8 fixed top-[60px] right-6 flex flex-col gap-[2px] justify-center items-center rounded-full cursor-pointer"
       >
         <div
           style={{ backgroundColor: color }}

@@ -60,7 +60,7 @@ export const Notes = () => {
 
       <NotesSection>
         {newArray.map((note) => (
-          <NoteItem item={note} />
+          <NoteItem key={note.id} item={note} />
         ))}
       </NotesSection>
     </PageContent>

@@ -29,7 +29,18 @@
   display: none;
 }
 
-@media (max-width: 800px) {
+.hambLine {
+  transition: all 1s;
+  stroke-dasharray: 60 31 60 300;
+}
+
+.activeHambLine {
+  transition: all 1s;
+  stroke-dasharray: 60 105 60 300;
+  stroke-dashoffset: -90;
+}
+
+@media (max-width: 767px) {
   .mobile_btn {
     display: flex;
     /* position: absolute;
