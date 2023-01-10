@@ -49,7 +49,7 @@ const MyLink = ({ link }) => {
   return (
     <div key={link.id} className="">
       <a
-        className="w-fit block mt-2 text-lg font-semibold text-[#070035] transition-all hover:text-[#ed1c24]"
+        className="w-fit block mt-2 text-lg font-semibold text-[#070035] transition-all underline underline-offset-4 hover:text-[#ed1c24]"
         href={link.url}
       >
         {link.title}

@@ -8,7 +8,7 @@ export const Breadcrumbs = () => {
     .replace(/\s/, "")
     .split(" ");
   return (
-    <div className="text-xs select-none pb-2">
+    <div className="text-xs select-none pb-3">
       {!home && (
         <NavLink className="font-semibold text-[#52505A]" to="/" title="Home">
           Home

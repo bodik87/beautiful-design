@@ -75,6 +75,7 @@ export const notes = [
       },
     ],
     path: "/notes/0",
+    pagePath: "/notes",
   },
   {
     id: 1,
@@ -91,6 +92,7 @@ export const notes = [
     
     cd // mk dir // ls
     `,
+    pagePath: "/notes",
   },
   {
     id: 2,
@@ -109,6 +111,7 @@ export const notes = [
     useEffect(() => {
       inputRef.current.focus()
     }, [visible])`,
+    pagePath: "/notes",
   },
   {
     id: 3,
@@ -123,16 +126,17 @@ export const notes = [
     const home = location.pathname === "/";
     {home ? <Home /> : <Outlet />}
   `,
+    pagePath: "/react",
   },
 ];
 
-export const filters = ["Easy", "All", "Hard"];
+export const filters = ["Projects", "All", "Components"];
 
 export const projects = [
   {
     id: 0,
     category: "React",
-    level: "Hard",
+    type: "Projects",
     title: "Habits",
     description: "Додаток для ведення звичок",
     images: [
@@ -141,7 +145,8 @@ export const projects = [
       "/projects/react/slide0_3.jpg",
       "/projects/react/slide0_4.jpg",
     ],
-    url: "",
+    url: "##",
+    pagePath: "/react",
   },
   {
     id: 1,
@@ -154,7 +159,8 @@ export const projects = [
       "/projects/react/slide0_3.jpg",
       "/projects/react/slide0_4.jpg",
     ],
-    url: "",
+    url: "##",
+    pagePath: "/css",
   },
   {
     id: 2,
@@ -167,6 +173,23 @@ export const projects = [
       "/projects/react/slide0_3.jpg",
       "/projects/react/slide0_4.jpg",
     ],
-    url: "",
+    url: "##",
+    pagePath: "/html",
+  },
+  {
+    id: 3,
+    category: "React",
+    type: "Components",
+    title: "Component",
+    description:
+      "Зручний компонент, який можна легко перевикористати в іншому проекті",
+    images: [
+      "/projects/react/slide0_1.jpg",
+      "/projects/react/slide0_2.jpg",
+      "/projects/react/slide0_3.jpg",
+      "/projects/react/slide0_4.jpg",
+    ],
+    url: "##",
+    pagePath: "/react",
   },
 ];

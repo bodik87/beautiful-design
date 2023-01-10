@@ -16,8 +16,16 @@ export const ProjectsPage = () => {
             <h3 className="font-semibold text-sm mt-1 mb-2 opacity-70">
               {project.category}
             </h3>
-            <p className="text-sm whitespace-pre-line">{project.description}</p>
-            <SwiperSlider imagesArray={project.images} />{" "}
+            <p className="text-base whitespace-pre-line">
+              {project.description}
+            </p>
+            <a
+              className="mt-2 text-sm text-[#ED1C24] underline underline-offset-4"
+              href={project.url}
+            >
+              Посилання
+            </a>
+            <SwiperSlider imagesArray={project.images} />
           </CardContainer>
         ))}
       </div>

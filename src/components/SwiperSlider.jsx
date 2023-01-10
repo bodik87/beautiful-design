@@ -19,12 +19,7 @@ export const SwiperSlider = ({ imagesArray }) => {
       >
         {imagesArray.map((slide) => (
           <SwiperSlide className="w-full" key={slide}>
-            <img
-              onClick={() => console.log(555)}
-              className="rounded-xl"
-              src={slide}
-              alt={slide}
-            />
+            <img className="rounded-xl" src={slide} alt={slide} />
           </SwiperSlide>
         ))}
       </Swiper>

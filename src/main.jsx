@@ -12,6 +12,7 @@ import { CSSPage } from "./pages/CSSPage";
 import { HTMLPage } from "./pages/HTMLPage";
 import { NotePage_0 } from "./pages/Notes/NotePage_0";
 import "./index.css";
+import { Screen } from "./pages/Screen";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: "/notes/0",
         element: <NotePage_0 />,
+      },
+      {
+        path: "/screen/:id",
+        element: <Screen />,
       },
     ],
     errorElement: <ErrorPage />,
