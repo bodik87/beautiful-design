@@ -49,14 +49,14 @@ export const Notes = () => {
         onClick={getFidteredNotesByLabel}
         array={notes}
       />
-      <PageContent className="flex items-center gap-3 my-4 relative">
+      <div className="flex items-center gap-3 my-4 relative">
         <PageTitle title="Notes" />
         <NotesInput
           clearInput={clearInput}
           inputText={inputText}
           inputHandler={getFidteredNotesByQuery}
         />
-      </PageContent>
+      </div>
 
       <NotesSection>
         {newArray.map((note) => (
