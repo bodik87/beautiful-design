@@ -1,5 +1,4 @@
 import { Aside } from "./components/Aside";
-import { Content } from "./components/Content";
 import { Main } from "./components/Main";
 import { Navbar } from "./components/Navbar/Navbar";
 
@@ -7,10 +6,10 @@ export const App = () => {
   return (
     <>
       <Navbar />
-      <Content>
+      <div className="absolute z-40 top-[80px] left-3 right-3 bottom-3 flex bg-white rounded-xl shadow-[0_-5px_7px_-3px_rgba(0,0,0,0.02)] overflow-hidden ">
         <Aside />
         <Main />
-      </Content>
+      </div>
     </>
   );
 };

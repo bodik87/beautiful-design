@@ -2,8 +2,10 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { PageTitle } from "../../components/PageTitle";
 import { Labels } from "../../components/ui/Labels";
+import { PageContent } from "../../components/PageContent";
 import { notes, notesLabels } from "../../data";
 import SearchIcon from "/search.svg";
+import ClearIcon from "/clear.svg";
 import ArrowImg from "/arrow.svg";
 
 export const Notes = () => {
@@ -33,8 +35,13 @@ export const Notes = () => {
     setInputText(lowerCase);
   };
 
+  const clearInput = () => {
+    setInputText("");
+    setNewArray(notes);
+  };
+
   return (
-    <>
+    <PageContent>
       <Labels
         bgColor="#F6F5F8"
         textColor="#070035"
@@ -42,24 +49,25 @@ export const Notes = () => {
         onClick={getFidteredNotesByLabel}
         array={notes}
       />
-      <header className="flex flex-col md:flex-row md:items-center gap-3 mb-4 relative">
+      <PageContent className="flex items-center gap-3 my-4 relative">
         <PageTitle title="Notes" />
         <NotesInput
+          clearInput={clearInput}
           inputText={inputText}
           inputHandler={getFidteredNotesByQuery}
         />
-      </header>
+      </PageContent>
 
       <NotesSection>
         {newArray.map((note) => (
           <NoteItem item={note} />
         ))}
       </NotesSection>
-    </>
+    </PageContent>
   );
 };
 
-const NotesInput = ({ inputText, inputHandler }) => {
+const NotesInput = ({ inputText, inputHandler, clearInput }) => {
   return (
     <div className="relative">
       <img
@@ -68,10 +76,19 @@ const NotesInput = ({ inputText, inputHandler }) => {
         src={SearchIcon}
         alt="search"
       />
+      {inputText && (
+        <img
+          onClick={clearInput}
+          className="absolute top-[8px] left-[175px] md:left-[190px] cursor-pointer"
+          width={16}
+          src={ClearIcon}
+          alt="clear"
+        />
+      )}
       <input
         value={inputText}
         onChange={inputHandler}
-        className={`md:ml-4 bg-transparent outline outline-[3px] outline-transparent border-[2px] border-[#FBBC03] text-[#070035] text-sm pl-8 pr-2 py-1 rounded-xl transition-all placeholder:text-xs placeholder:text-[#94A795] focus:outline focus:outline-[#FBBC03]/20`}
+        className={`w-[200px] md:ml-4 bg-transparent outline outline-[3px] outline-transparent border-[2px] border-[#FBBC03] text-[#070035] text-sm pl-8 pr-2 py-1 rounded-xl transition-all placeholder:text-xs placeholder:text-[#94A795] focus:outline focus:outline-[#FBBC03]/20`}
         placeholder="Search notes"
       />
     </div>

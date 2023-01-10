@@ -33,7 +33,7 @@ export const notes = [
     labels: "",
     title: "Корисні ресурси для швидкої розробки",
     subtitle: "Список корисних сайтів",
-    description: `Лінь - один з найкращих двигунів прогресу! Вона змушує людину працювати менше, часто оптимізуючи робочий процес.
+    description: `**Лінь** - один з найкращих двигунів прогресу! Вона змушує людину працювати менше, часто оптимізуючи робочий процес.
       В цій статті зібрані посилання, що допоможуть пришвидшити розробку, витрачаючи менше зусиль.`,
     links_pictures: [
       {
@@ -81,13 +81,12 @@ export const notes = [
     labels: "npm",
     title: "NPM команди, що можуть знадобитись",
     subtitle: "",
-    description: `Створити програму в корені папки:
+    description: `**Створити програму в корені папки:** 
     npm create vite@latest .
+     
+    **Видалити пакет:** npx remove react-router-dom 
     
-    Видалити пакет: 
-    npx remove react-router-dom 
-    
-    Вирішення проблеми запуску коду з чужого репозиторія:
+    **Вирішення проблеми запуску коду з чужого репозиторія:**
     "start": "react-scripts --openssl-legacy-provider start"
     
     cd // mk dir // ls
@@ -124,5 +123,47 @@ export const notes = [
     const home = location.pathname === "/";
     {home ? <Home /> : <Outlet />}
   `,
+  },
+];
+
+export const filters = ["Easy", "All", "Hard"];
+
+export const projects = [
+  {
+    id: 0,
+    category: "React",
+    level: "Hard",
+    title: "Habits",
+    description: "Додаток для ведення звичок",
+    images: [
+      "/projects/react/slide0_1.png",
+      "/projects/react/slide0_2.png",
+      "/projects/react/slide0_3.png",
+    ],
+    url: "",
+  },
+  {
+    id: 1,
+    category: "CSS",
+    title: "Habits",
+    description: "Додаток для ведення звичок",
+    images: [
+      "/projects/react/slide0_1.png",
+      "/projects/react/slide0_2.png",
+      "/projects/react/slide0_3.png",
+    ],
+    url: "",
+  },
+  {
+    id: 2,
+    category: "HTML",
+    title: "Habits",
+    description: "Додаток для ведення звичок",
+    images: [
+      "/projects/react/slide0_1.png",
+      "/projects/react/slide0_2.png",
+      "/projects/react/slide0_3.png",
+    ],
+    url: "",
   },
 ];

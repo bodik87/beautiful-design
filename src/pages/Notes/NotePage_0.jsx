@@ -1,4 +1,5 @@
 import React from "react";
+import { PageContent } from "../../components/PageContent";
 import { PageTitle } from "../../components/PageTitle";
 import { Labels } from "../../components/ui/Labels";
 import { notes } from "../../data";
@@ -6,35 +7,33 @@ import { notes } from "../../data";
 export const NotePage_0 = () => {
   const subtitles = ["Робота з зображеннями", "Сайти з іконками", "JSON"];
   return (
-    <>
+    <PageContent>
       <Labels labels={subtitles} />
-      <div className="overflow-auto pr-4 ">
-        <PageTitle title={notes[0].title} />
+      <PageTitle title={notes[0].title} />
 
-        <div className="columns-1 md:columns-2 lg:columns-3 mt-4 gap-10">
-          <div className="break-inside-avoid">
-            <Subtitle subtitle={subtitles[0]} />
-            {notes[0].links_pictures.map((link) => (
-              <MyLink key={link.id} link={link} />
-            ))}
-          </div>
+      <div className="columns-1 md:columns-2 lg:columns-3 mt-4 gap-10">
+        <div className="break-inside-avoid">
+          <Subtitle subtitle={subtitles[0]} />
+          {notes[0].links_pictures.map((link) => (
+            <MyLink key={link.id} link={link} />
+          ))}
+        </div>
 
-          <div className="break-inside-avoid">
-            <Subtitle subtitle={subtitles[1]} />
-            {notes[0].links_icons.map((link) => (
-              <MyLink key={link.id} link={link} />
-            ))}
-          </div>
+        <div className="break-inside-avoid">
+          <Subtitle subtitle={subtitles[1]} />
+          {notes[0].links_icons.map((link) => (
+            <MyLink key={link.id} link={link} />
+          ))}
+        </div>
 
-          <div className="break-inside-avoid">
-            <Subtitle subtitle={subtitles[2]} />
-            {notes[0].links_json.map((link) => (
-              <MyLink key={link.id} link={link} />
-            ))}
-          </div>
+        <div className="break-inside-avoid">
+          <Subtitle subtitle={subtitles[2]} />
+          {notes[0].links_json.map((link) => (
+            <MyLink key={link.id} link={link} />
+          ))}
         </div>
       </div>
-    </>
+    </PageContent>
   );
 };
 

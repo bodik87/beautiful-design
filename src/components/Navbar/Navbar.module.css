@@ -1,6 +1,6 @@
 :root {
   --index: calc(1vw + 1vh);
-  --transition: 1s cubic-bezier(0.2, 0.6, 0, 1);
+  --transition: 0.7s cubic-bezier(0.2, 0.6, 0, 1);
 }
 
 .menu {

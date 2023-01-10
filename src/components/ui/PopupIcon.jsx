@@ -1,13 +1,48 @@
-export const PopupIcon = ({ isPressed, color = "#526b5b" }) => {
+import { NavLink } from "react-router-dom";
+import { projectCategories } from "../../data";
+import { AsideIcon } from "../AsideIcon";
+
+export const PopupIcon = ({ isPressed, color = "#526b5b", onClick }) => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      xmlSpace="preserve"
-      fill={isPressed ? "#ed1c24" : color}
-      viewBox="0 0 52 65"
-      width={20}
-    >
-      <path d="M38 23c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0 32c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0-16c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z" />
-    </svg>
+    <>
+      <div
+        onClick={onClick}
+        className="bg-white w-8 h-8 rounded-full flex flex-col gap-[2px] items-center justify-center cursor-pointer box md:hidden fixed top-[85px] right-6"
+      >
+        <div
+          style={{ backgroundColor: color }}
+          className="w-[3px] h-[3px] rounded-full"
+        ></div>
+        <div
+          style={{ backgroundColor: color }}
+          className="w-[3px] h-[3px] rounded-full"
+        ></div>
+        <div
+          style={{ backgroundColor: color }}
+          className="w-[3px] h-[3px] rounded-full"
+        ></div>
+      </div>
+      <div
+        className={`${
+          !isPressed && "hidden"
+        } flex flex-col md:hidden gap-2 absolute w-fit z-50 top-10 right-6 bg-white shadow-[0_3px_12px_-7px_rgba(0,0,0,0.7)] border border-[#E1F0DB] py-4 rounded-xl transition-all overflow-hidden`}
+      >
+        {projectCategories.map((category) => (
+          <NavLink
+            key={category.title}
+            title={category.title}
+            to={category.path}
+          >
+            <div className="-ml-4 flex gap-3 items-center bg-transparent py-2 px-8 transition-all hover:bg-[#E1F0DB]">
+              <AsideIcon
+                icon={category.icon}
+                background={category.background}
+              />
+              <span className="text-sm">{category.title} projects</span>
+            </div>
+          </NavLink>
+        ))}
+      </div>
+    </>
   );
 };

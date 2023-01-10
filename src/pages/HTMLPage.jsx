@@ -1,9 +1,10 @@
+import { PageContent } from "../components/PageContent";
 import { PageTitle } from "../components/PageTitle";
 
 export const HTMLPage = () => {
   return (
-    <div>
+    <PageContent>
       <PageTitle title="HTML projects" />
-    </div>
+    </PageContent>
   );
 };

@@ -1,9 +1,10 @@
 import { PageTitle } from "../components/PageTitle";
+import { PageContent } from "../components/PageContent";
 import Photo from "/photo.jpg";
 
 export const About = () => {
   return (
-    <div>
+    <PageContent>
       <PageTitle title="About" />
       <img className="rounded-full" src={Photo} alt="photo" />
       <p>
@@ -35,6 +36,6 @@ export const About = () => {
         Я не знаю як закінчиться моє навчання, проте я ні краплі не пожалкував,
         що вивчив цей напрямок.
       </p>
-    </div>
+    </PageContent>
   );
 };

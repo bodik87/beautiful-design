@@ -8,7 +8,7 @@ export const Labels = ({
   textColor = "#906556",
 }) => {
   return (
-    <div className="flex flex-wrap gap-2 mt-6 mb-2 text-[10px] font-semibold relative">
+    <div className="flex flex-wrap gap-2 mt-2 mb-2 text-[10px] font-semibold relative">
       {labels.map((label) => (
         <a
           onClick={() => onClick(label, array)}
@@ -23,7 +23,6 @@ export const Labels = ({
           {label}
         </a>
       ))}
-      <div className="absolute z-40 right-0 top-8 w-[2px] h-32 bg-gradient-to-b from-white to-transparent" />
     </div>
   );
 };
